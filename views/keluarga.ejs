@@ -1,0 +1,183 @@
+<%- include('./component/modal/keluarga/edit') %>
+<!--  -->
+<%- include('./component/modal/keluarga/delete') %>
+
+<div class="container-fluid">
+  <div class="row p-5 justify-content-center">
+    <div class="col">
+      <h1 class="display-6 mb-3">Daftar Keluarga</h1>
+      <form
+        class="input-group mb-5"
+        role="search"
+        method="post"
+        style="width: 400px"
+        action="/keluarga/search"
+      >
+        <input
+          class="form-control"
+          type="search"
+          name="query"
+          placeholder="Nama Keluarga"
+          aria-label="Search"
+          autocomplete="off"
+          value="<%= query %>"
+        />
+        <button class="btn btn-primary" type="submit">
+          <i class="bi bi-search"></i> Cari
+        </button>
+      </form>
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr class="table-secondary text-primary align-middle">
+            <th scope="col" width="45">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Penghasilan Bulanan</th>
+            <th scope="col">Status Tempat Tinggal</th>
+            <th scope="col">Pekerjaan</th>
+            <th scope="col">Jumlah Anggota Keluarga</th>
+            <th scope="col">Jumlah Keluarga Lansia</th>
+            <th scope="col">Pengeluaran Bulanan</th>
+            <th scope="col">Pendidikan Tertinggi</th>
+            <th scope="col" width="90">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% keluarga.forEach((keluarga, index) => { %>
+          <tr>
+            <th scope="row" class="text-primary"><%= index + 1 %></th>
+            <td><%= keluarga.name %></td>
+            <% keluarga.criteria.forEach((value, index) => { %>
+            <!-- Kriteria 1 -->
+            <% if (value === 1 && index === 0) { %>
+            <td>
+              Rp. 0 -<br />
+              Rp. 400.000
+            </td>
+            <% } %> <% if (value === 2 && index === 0) { %>
+            <td>
+              Rp. 400.000 -<br />
+              Rp. 1.000.000
+            </td>
+            <% } %> <% if (value === 3 && index === 0) { %>
+            <td>
+              Rp. 1.000.000 -<br />
+              Rp. 2.000.000
+            </td>
+            <% } %> <% if (value === 4 && index === 0) { %>
+            <td>
+              Rp. 2.000.000 -<br />
+              Rp. 3.000.000
+            </td>
+            <% } %> <% if (value === 5 && index === 0) { %>
+            <td>> Rp. 3.000.000</td>
+            <% } %>
+            <!-- Kriteria 2 -->
+            <% if (value === 1 && index === 1) { %>
+            <td>TIDAK ADA</td>
+            <% } %> <% if (value === 2 && index === 1) { %>
+            <td>KOS</td>
+            <% } %> <% if (value === 3 && index === 1) { %>
+            <td>KONTRAK</td>
+            <% } %> <% if (value === 4 && index === 1) { %>
+            <td>MILIK ORANG TUA</td>
+            <% } %> <% if (value === 5 && index === 1) { %>
+            <td>MILIK SENDIRI</td>
+            <% } %>
+            <!-- Kriteria 3 -->
+            <% if (value === 1 && index === 2) { %>
+            <td>PENGANGGURAN</td>
+            <% } %> <% if (value === 2 && index === 2) { %>
+            <td>PETANI</td>
+            <% } %> <% if (value === 3 && index === 2) { %>
+            <td>TUKANG</td>
+            <% } %> <% if (value === 4 && index === 2) { %>
+            <td>KARYAWAN SWASTA</td>
+            <% } %> <% if (value === 5 && index === 2) { %>
+            <td>PNS</td>
+            <% } %>
+            <!-- Kriteria 4 -->
+            <% if (value === 1 && index === 3) { %>
+            <td>1 ORANG</td>
+            <% } %> <% if (value === 2 && index === 3) { %>
+            <td>2 ORANG</td>
+            <% } %> <% if (value === 3 && index === 3) { %>
+            <td>3 ORANG</td>
+            <% } %> <% if (value === 4 && index === 3) { %>
+            <td>4 ORANG</td>
+            <% } %> <% if (value === 5 && index === 3) { %>
+            <td>>4 ORANG</td>
+            <% } %>
+            <!-- Kriteria 5 -->
+            <% if (value === 1 && index === 4) { %>
+            <td>TIDAK ADA</td>
+            <% } %> <% if (value === 2 && index === 4) { %>
+            <td>1 ORANG</td>
+            <% } %> <% if (value === 3 && index === 4) { %>
+            <td>2 ORANG</td>
+            <% } %> <% if (value === 4 && index === 4) { %>
+            <td>3 ORANG</td>
+            <% } %> <% if (value === 5 && index === 4) { %>
+            <td>>3 ORANG</td>
+            <% } %>
+            <!-- Kriteria 6 -->
+            <% if (value === 1 && index === 5) { %>
+            <td>
+              Rp. 0 -<br />
+              Rp. 400.000
+            </td>
+            <% } %> <% if (value === 2 && index === 5) { %>
+            <td>
+              Rp. 400.000 -<br />
+              Rp. 1.000.000
+            </td>
+            <% } %> <% if (value === 3 && index === 5) { %>
+            <td>
+              Rp. 1.000.000 -<br />
+              Rp. 2.000.000
+            </td>
+            <% } %> <% if (value === 4 && index === 5) { %>
+            <td>
+              Rp. 2.000.000 -<br />
+              Rp. 3.000.000
+            </td>
+            <% } %> <% if (value === 5 && index === 5) { %>
+            <td>> Rp. 3.000.000</td>
+            <% } %>
+            <!-- Kriteria 6 -->
+            <% if (value === 1 && index === 6) { %>
+            <td>TIDAK SEKOLAH</td>
+            <% } %> <% if (value === 2 && index === 6) { %>
+            <td>SD</td>
+            <% } %> <% if (value === 3 && index === 6) { %>
+            <td>SMP</td>
+            <% } %> <% if (value === 4 && index === 6) { %>
+            <td>SMA</td>
+            <% } %> <% if (value === 5 && index === 6) { %>
+            <td>SARJANA</td>
+            <% } %> <% }) %>
+            <td>
+              <a
+                class="text-decoration-none text-primary text-center"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#edit<%= keluarga.id %>"
+              >
+                <i class="bi bi-pencil-square"></i>
+              </a>
+              &ensp;|&ensp;
+              <a
+                class="text-decoration-none text-primary text-center"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#delete<%= keluarga.id %>"
+              >
+                <i class="bi bi-trash"></i>
+              </a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

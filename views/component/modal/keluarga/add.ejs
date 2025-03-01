@@ -1,0 +1,104 @@
+<div
+  class="modal fade"
+  id="add"
+  tabindex="-1"
+  aria-labelledby="addLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="addLabel"><i class="bi bi-chevron-right"></i> Tambah Keluarga</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/keluarga">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="name" name="name" placeholder=" " required autocomplete="off">
+              <label for="name" class="form-label">Nama Keluarga</label>
+            </div>
+            <div class="mb-3">
+              <label for="criteria" class="form-label">Penghasilan Bulanan</label>
+              <select class="form-select" name="criteria" id="criteria" required>
+                <option value="1">Rp. 0 - Rp. 400.000</option>
+                <option value="2">Rp. 400.000 - Rp. 1.000.000</option>
+                <option value="3">Rp. 1.000.000 - Rp. 2.000.000</option>
+                <option value="4">Rp. 2.000.000 - Rp. 3.000.000</option>
+                <option value="5">> Rp. 3.000.000</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="criteria" class="form-label">Status Tempat Tinggal</label>
+              <select class="form-select" name="criteria" id="criteria" required>
+                <option value="1">TIDAK ADA</option>
+                <option value="2">KOS</option>
+                <option value="3">KONTRAK</option>
+                <option value="4">MILIK ORANG TUA</option>
+                <option value="5">MILIK SENDIRI</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="criteria" class="form-label">Pekerjaan</label>
+              <select class="form-select" name="criteria" id="criteria" required>
+                <option value="1">PENGANGGURAN</option>
+                <option value="2">PETANI</option>
+                <option value="3">TUKANG</option>
+                <option value="4">KARYAWAN SWASTA</option>
+                <option value="5">PNS</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="criteria" class="form-label">Jumlah Anggota Keluarga</label>
+              <select class="form-select" name="criteria" id="criteria" required>
+                <option value="1">1 ORANG</option>
+                <option value="2">2 ORANG</option>
+                <option value="3">3 ORANG</option>
+                <option value="4">4 ORANG</option>
+                <option value="5">>4 ORANG</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="criteria" class="form-label">Jumlah Keluarga Lansia</label>
+              <select class="form-select" name="criteria" id="criteria" required>
+                <option value="1">Tidak Ada</option>
+                <option value="2">1 ORANG</option>
+                <option value="3">2 ORANG</option>
+                <option value="4">3 ORANG</option>
+                <option value="5">>3 ORANG</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="criteria" class="form-label">Pengeluaran Bulanan</label>
+              <select class="form-select" name="criteria" id="criteria" required>
+                <option value="1">Rp. 0 - Rp. 400.000</option>
+                <option value="2">Rp. 400.000 - Rp. 1.000.000</option>
+                <option value="3">Rp. 1.000.000 - Rp. 2.000.000</option>
+                <option value="4">Rp. 2.000.000 - Rp. 3.000.000</option>
+                <option value="5">> Rp. 3.000.000</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="criteria" class="form-label">Pendidikan Tertinggi</label>
+              <select class="form-select" name="criteria" id="criteria" required>
+                <option value="1">TIDAK SEKOLAH</option>
+                <option value="2">SD</option>
+                <option value="3">SMP</option>
+                <option value="4">SMA</option>
+                <option value="5">SARJANA</option>
+              </select>
+            </div>
+        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-outline-primary"><i class="bi bi-person-fill-add"></i> Tambah</button>
+            </div>
+        </form>
+    </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a
+      class="navbar-brand pt-3"
+      role="button"
+      style="font-family: 'Times New Roman', Times, serif"
+      ><h5>
+        <img src="/assets/logo.png" alt="" width="42px" style="opacity: 0.8" />
+        <span class="fw-lights">
+          Aplikasi Bantuan Sosial Minahasa Tenggara</span
+        >
+      </h5></a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/"
+            ><i class="bi bi-house-door-fill"></i> Beranda</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/keluarga?query="
+            ><i class="bi bi-people-fill"></i> Keluarga</a
+          >
+        </li>
+        <% if (locals.user) { %>
+        <li class="nav-item">
+          <a
+            class="nav-link text-primary"
+            aria-current="page"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#add"
+            ><i class="bi bi-person-plus-fill"></i> Tambah</a
+          >
+        </li>
+        <% } %>
+      </ul>
+      <div class="d-flex">
+        <% if (locals.user) { %>
+        <div class="dropdown">
+          <a
+            class="text-primary me-4"
+            href="#"
+            id="navbarDarkDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-auto-close="outside"
+            style="text-decoration: none"
+            ><i class="bi bi-person-circle"></i> <%= locals.user.name %></a
+          >
+          <ul
+            class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end"
+            aria-labelledby="navbarDropdown"
+          >
+            <li>
+              <div class="container pe-3 ps-3">
+                <p>
+                  <%= locals.user.name %>
+                  <br />
+                  <span class="text-secondary" style="font-size: 0.9rem">
+                    <%= locals.user.role %>
+                  </span>
+                </p>
+              </div>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a
+                class="dropdown-item text-primary"
+                href="/edit"
+                style="text-decoration: none"
+                ><i class="bi bi-pencil-square"></i> Edit Profil</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item text-primary"
+                href="/user/signout"
+                style="text-decoration: none"
+                ><i class="bi bi-box-arrow-in-left"></i> Keluar</a
+              >
+            </li>
+          </ul>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
