@@ -1,0 +1,401 @@
+<div class="container-fluid">
+  <div class="row p-5 justify-content-center">
+    <div class="col-10">
+      <h1 class="display-6 mb-3">Algoritma</h1>
+      <p>
+        <b>Simple Additive Weighting (SAW)</b> adalah metode yang sering
+        digunakan dalam pengambilan keputusan, khususnya dalam situasi yang
+        melibatkan penilaian dan perankingan alternatif berdasarkan beberapa
+        kriteria. Metode ini sederhana dan efektif untuk menilai alternatif mana
+        yang terbaik berdasarkan faktor atau kriteria yang ada.
+      </p>
+      <h5>C1 – Penghasilan Bulanan (25%)</h5>
+      <p>
+        Nilai bobot dari variable yang akan digunakan untuk kriteria Penghasilan
+        yaitu semakin kecil nilainya semakin baik.Tentunya salah satu penentuan
+        dalam menyeleksi penerima BLT adalah penghasilan yang rendah, jadi
+        semakin rendah penghasilan yang di dapatkan maka ledih baik Artinya
+        semakin kecil nilai bobot maka semakin baik, Nilai bobot untuk setiap
+        variable dari kriteria penghasilan yaitu :
+      </p>
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr class="table-secondary align-middle">
+            <th scope="col" width="45">No</th>
+            <th scope="col">Penghasilan Bulanan</th>
+            <th scope="col">Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Lebih dari 3.000.000 Rp</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>2.000.000 Rp – 3.000.000 Rp</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>1.000.000 Rp – 2.000.000 Rp</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>400.000 Rp – 1.000.000 Rp</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>400.000 Rp</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Karena disini nilai bobot yang semakin kecil semakin baik, maka kriteria
+        Biaya masuk kedalam kategori Cost.
+      </p>
+      <h6>C2 – Status Tempat Tinggal (20%)</h6>
+      <p>
+        Nilai bobot dari variable yang akan digunakan untuk kriteria Tempat
+        Tinggal yaitu semakin kecil nilainya semakin baik. salah satu penentuan
+        dalam menyeleksi penerima BLT adalah Tempat tinggal yang tidak pasti,
+        jadi semakin Tidak pastinya tempat tinggal yang di Huni maka ledih baik.
+        Artinya semakin kecil nilai bobot maka semakin baik, Nilai bobot untuk
+        Setiap Variable dari Kriteria Status Tempat Tinggal yaitu :
+      </p>
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr class="table-secondary align-middle">
+            <th scope="col" width="45">No</th>
+            <th scope="col">Status Tempat Tinggal</th>
+            <th scope="col">Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td value="1">TIDAK ADA</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td value="2">KOS</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td value="3">KONTRAK</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td value="4">MILIK ORANG TUA</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td value="5">MILIK SENDIRI</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Karena disini nilai bobot yang semakin kecil semakin baik, maka kriteria
+        Biaya masuk kedalam kategori Cost.
+      </p>
+      <h6>C3 – Sumber Mata Pencarian (15%)</h6>
+      <p>
+        Sumber Mata pencaharian merupakan kegiatan mengeksploitasi dan
+        memanfaatkan sumber-sumber daya yang ada pada lingkungan fisik, sosial
+        dan budaya yang terwujud sebagai kegiatan produksi, distribusi dan
+        konsumsi. Jadi, dalam penentuan bantuan BLT apa bila terdapat keluarga
+        yang memiliki mata pencarian yang tidak memadai maka akan ada peluang
+        dalam penentuan penerima BLT. Berikut merupakan nilai bobot untuk
+        Variable dari kriteria Sumber Mata Pencarian.
+      </p>
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr class="table-secondary align-middle">
+            <th scope="col" width="45">No</th>
+            <th scope="col">Sumber Mata Pencarian</th>
+            <th scope="col">Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td value="1">PNS</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td value="2">KARYAWAN SWASTA</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td value="3">TUKANG</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td value="4">PETANI</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td value="5">PENGANGGURAN</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Karena disini nilai bobot yang semakin kecil semakin baik, maka kriteria
+        Sumber Mata Pencarian masuk kedalam kategori Cost.
+      </p>
+      <h6>C4 – Jumlah Tanggungan (15%)</h6>
+      <p>
+        Jumlah tanggungan keluarga adalah jumlah anggota keluarga yang menjadi
+        tanggungan dari rumah tangga tersebut, baik itu saudara kandung maupun
+        saudara bukan kandung yang tinggal satu rumah tapi belum bekerja,
+        semakin banyak tanggungan yang di miliki suatu keluarga maka akan besar
+        peluang dalam penentuan bantuan BLT.
+      </p>
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr class="table-secondary align-middle">
+            <th scope="col" width="45">No</th>
+            <th scope="col">Jumlah Tanggungan</th>
+            <th scope="col">Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td value="1">1 ORANG</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td value="2">2 ORANG</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td value="3">3 ORANG</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td value="4">4 ORANG</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td value="5">>4 ORANG</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Kriteria Jumlah Tanggungan masuk kedalam kategori cost.</p>
+      <h6>C5 – Jumlah Keluarga Lansia Atau Sakit Menahun/Kronis (10%)</h6>
+      <p>
+        Dalam bantuan BLT mempunyai salah satu kriteria yaitu mempunyai Jumlah
+        Keluarga Lansia Atau Sakit Menahun/Kronis, artinya apabila di dalam
+        suatu keluarga yang berkecukupan mempunyai Keluarga Lansia Atau Sakit
+        Menahun/Kronis akan mempunyai peluang dalam mendaftar bantuan BLT untuk
+        menghidupi keluarga tersebut.
+      </p>
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr class="table-secondary align-middle">
+            <th scope="col" width="45">No</th>
+            <th scope="col">
+              Jumlah Keluarga Lansia Atau Sakit Menahun/Kronis
+            </th>
+            <th scope="col">Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td value="1">Tidak Ada</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td value="2">1 ORANG</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td value="3">2 ORANG</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td value="4">3 ORANG</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td value="5">>3 ORANG</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Kriteria Jumlah Keluarga Lansia Atau Sakit Menahun/Kronis masuk kedalam
+        kategori cost.
+      </p>
+      <h6>C6 – Pengeluaran Bulanan</h6>
+      <p>
+        Salah satu kriteria dalam penentuan BLT yaitu tidak terdafratnya calon
+        penerima sebagai penerima bantuan sosial (bansos) lain dari pemerintah
+        pusat. Ini berarti calon penerima BLT tidak menerima program Keluarga
+        Harapan (PKH), Kartu Sembako, Paket Sembako, Bantuan Pangan Non Tunai
+        (BPNT), hingga Kartu pekerja. Nilai bobot untuk setiap variable dari
+        kriteria Pendidikan Akhir yaitu:
+      </p>
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr class="table-secondary align-middle">
+            <th scope="col" width="45">No</th>
+            <th scope="col">Pengeluaran Bulanan</th>
+            <th scope="col">Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td value="1">Rp. 0 - Rp. 400.000</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td value="2">Rp. 400.000 - Rp. 1.000.000</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td value="3">Rp. 1.000.000 - Rp. 2.000.000</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td value="4">Rp. 2.000.000 - Rp. 3.000.000</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td value="5">> Rp. 3.000.000</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        kriteria Calon Penerima tidak terdaftar sebagai penerima bantuan social
+        lain dari pemerintah masuk kedalam kategori cost.
+      </p>
+      <h6>C7 – Pendidikan Akhir (10%)</h6>
+      <p>
+        Pendidikan akhir merupakan salah satu syarat dalam melamar suatu
+        pekerjaan. Tentunya suatu instansi atau tempat kerja akan merekrut
+        tenaga kerja dengan lulusan yang baik, jadi untuk lulusan yang tidak
+        memadai akan sulit mencari suatu pekerjaan. Dengan itu kemungkinan besar
+        bagi yang mempunyai lulusan yang tidak memadai akan sulit untuk memenuhi
+        kebutuhan sehari-hari karna kriteria yang di butuhkan untuk malamar
+        suatu pekerjaan yaitu orang dengan lulusan yang baik.
+      </p>
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr class="table-secondary align-middle">
+            <th scope="col" width="45">No</th>
+            <th scope="col">Pendidikan Akhir</th>
+            <th scope="col">Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td value="1">SARJANA</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td value="2">SMA</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td value="3">SMP</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td value="4">SD</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td value="5">TIDAK SEKOLAH</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Kriteria Pendidikan masuk kedalam kategori cost.</p>
+      <h5>Bobot Kriteria</h5>
+      <p>
+        Dari setiap kriteria yang digunakan, semuanya akan diberikan nilai
+        bobot. Pengambil keputusan memberikan bobot untuk setiap kriteria atas
+        dasar pertimbangan sendiri atau biasanya dari hasil survey/kuisioner.
+      </p>
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr class="table-secondary align-middle">
+            <th scope="col">Kriteria</th>
+            <th scope="col">Bobot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td value="1">C1</td>
+            <td>25%</td>
+          </tr>
+          <tr>
+            <td value="2">C2</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td value="3">C3</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td value="4">C4</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td value="5">C5</td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <td value="6">C6</td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <td value="7">C7</td>
+            <td>5%</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>100%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
