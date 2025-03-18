@@ -4,8 +4,8 @@ const percent = [25, 20, 15, 15, 10, 10, 5];
 function count(arr, namaKeluarga) {
     const hasil = [];
     arr.forEach((element, index) => {
-        const min = Math.min(...arr[index]);
-        hasil.push(arr[index].map((e) => min / e));
+        const min = Math.max(...arr[index]);
+        hasil.push(arr[index].map((e) => e / min ));
     });
     const output = [];
     let real = 0;
