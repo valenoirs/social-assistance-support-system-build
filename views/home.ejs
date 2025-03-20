@@ -32,6 +32,7 @@
           <tr class="table-secondary text-primary">
             <th scope="col" width="150">Peringkat</th>
             <th scope="col">Nama Keluarga</th>
+            <th scope="col">Desa Asal</th>
             <th scope="col" width="500">Score</th>
           </tr>
         </thead>
@@ -40,6 +41,7 @@
           <tr>
             <th scope="row"><%= score.rank %></th>
             <td><%= score.name %></td>
+            <td><%= score.origin %></td>
             <td><%= score.score %></td>
           </tr>
           <% }) %>
