@@ -18,7 +18,7 @@ const add = async (req, res) => {
         await new keluarga_1.Keluarga(req.body).save();
         req.flash('notification', 'Keluarga berhasil ditambahkan.');
         console.log('[SERVER]: New Keluarga added.');
-        return res.redirect('back');
+        return res.redirect('/keluarga?query=');
     }
     catch (error) {
         req.flash('notification', 'Terjadi kesalahan saat proses tambah keluarga, coba lagi.');
@@ -60,7 +60,7 @@ const update = async (req, res) => {
         await keluarga_1.Keluarga.findByIdAndUpdate(id, { $set: req.body });
         req.flash('notification', 'Keluarga berhasil diperbarui.');
         console.log('[SERVER]: Keluarga edited.');
-        return res.redirect('back');
+        return res.redirect('/keluarga?query=');
     }
     catch (error) {
         req.flash('notification', 'Terjadi kesalahan saat memperbarui keluarga, coba lagi.');

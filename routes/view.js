@@ -31,16 +31,22 @@ exports.router.get("/signin", async (req, res) => {
 
   const alternativesLabel = [
     [
-      "> Rp. 3.000.000",
-      "Rp. 2.000.000 - Rp. 3.000.000",
+      "> Rp. 2.000.000",
       "Rp. 1.000.000 - Rp. 2.000.000",
       "Rp. 400.000 - Rp. 1.000.000",
       "Rp. 0 - Rp. 400.000",
+      "TIDAK BERPENGHASILAN",
     ],
-    ["TIDAK ADA", "KOS", "KONTRAK", "MILIK ORANG TUA", "MILIK SENDIRI"],
-    ["PNS", "KARYAWAN SWASTA", "TUKANG", "PETANI", "PENGANGGURAN"],
-    ["1 ORANG", "2 ORANG", "3 ORANG", "4 ORANG", ">4 ORANG"],
-    ["Tidak Ada", "1 ORANG", "2 ORANG", "3 ORANG", ">3 ORANG"],
+    [
+      "MILIK SENDIRI",
+      "MILIK ORANG TUA",
+      "KONTRAK",
+      "KOS",
+      "TIDAK ADA"
+    ],
+    ["PNS", "KARYAWAN SWASTA", "TUKANG", "PETANI", "TIDAK BEKERJA"],
+    ["TIDAK ADA", "1 ORANG", "2 ORANG", "3 ORANG", ">3 ORANG"],
+    ["TIDAK ADA", "1 ORANG", "2 ORANG", "3 ORANG", ">3 ORANG"],
     [
       "Rp. 0 - Rp. 400.000",
       "Rp. 400.000 - Rp. 1.000.000",
