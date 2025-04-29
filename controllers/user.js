@@ -19,12 +19,12 @@ const signIn = async (req, res) => {
     if (!user) {
       req.flash('notification', 'Akun tidak ditemukan.')
       console.log('[SERVER]: Akun not found')
-      return res.redirect('back')
+      return res.redirect('/')
     }
     if (password !== user.password) {
       req.flash('notification', 'Password salah.')
       console.log('[SERVER]: Incorrect password')
-      return res.redirect('back')
+      return res.redirect('/')
     }
     const { id, name } = user
     const userSession = {
@@ -42,7 +42,7 @@ const signIn = async (req, res) => {
       'Terjadi kesalahan saat mencoba masuk, coba lagi.'
     )
     console.error('[SERVER]: Sign in error.', error)
-    return res.redirect('back')
+    return res.redirect('/')
   }
 }
 exports.signIn = signIn
@@ -54,14 +54,14 @@ const signOut = async (req, res) => {
         'Terjadi kesalahan saat mencoba keluar, coba lagi.'
       )
       console.log('[SERVER]: No session id provided.')
-      return res.redirect('back')
+      return res.redirect('/')
     }
     const { name } = req.session.user
     req.session.destroy((error) => {
       if (error) throw error
       res.clearCookie(config_1.default.SESSION_COLLECTION_NAME)
       console.log(`[SERVER]: ${name} signed out.`)
-      return res.redirect('back')
+      return res.redirect('/')
     })
   } catch (error) {
     req.flash(
@@ -69,7 +69,7 @@ const signOut = async (req, res) => {
       'Terjadi kesalahan saat mencoba keluar, coba lagi.'
     )
     console.error('[SERVER]: Sign out error.', error)
-    return res.redirect('back')
+    return res.redirect('/')
   }
 }
 exports.signOut = signOut

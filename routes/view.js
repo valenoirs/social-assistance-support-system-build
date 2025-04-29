@@ -37,13 +37,7 @@ exports.router.get("/signin", async (req, res) => {
       "Rp. 0 - Rp. 400.000",
       "TIDAK BERPENGHASILAN",
     ],
-    [
-      "MILIK SENDIRI",
-      "MILIK ORANG TUA",
-      "KONTRAK",
-      "KOS",
-      "TIDAK ADA"
-    ],
+    ["MILIK SENDIRI", "MILIK ORANG TUA", "KONTRAK", "KOS", "TIDAK ADA"],
     ["PNS", "KARYAWAN SWASTA", "TUKANG", "PETANI", "TIDAK BEKERJA"],
     ["TIDAK ADA", "1 ORANG", "2 ORANG", "3 ORANG", ">3 ORANG"],
     ["TIDAK ADA", "1 ORANG", "2 ORANG", "3 ORANG", ">3 ORANG"],
@@ -88,6 +82,7 @@ exports.router.get("/signin", async (req, res) => {
     alternativesLabel,
     alternativesCount,
     count,
+    signin: true,
   });
 });
 exports.router.get("/keluarga", async (req, res) => {
