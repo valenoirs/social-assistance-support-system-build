@@ -100,6 +100,57 @@
             </li>
           </ul>
         </div>
+        <% } else { %>
+        <div class="dropdown">
+          <a
+            class="text-primary me-4"
+            href="#"
+            id="navbarDarkDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-auto-close="outside"
+            style="text-decoration: none"
+            ><i class="bi bi-person-circle"></i> Masuk</a
+          >
+          <form
+            method="POST"
+            action="/user"
+            class="dropdown-menu dropdown-menu-lg-end p-4"
+            style="width: 300px"
+          >
+            <div class="mb-3">
+              <label for="exampleInputUsername1" class="form-label"
+                >Username</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="username"
+                id="exampleInputUsername1"
+                aria-describedby="usernameHelp"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                id="exampleInputPassword1"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-door-open-fill"></i> Masuk
+            </button>
+          </form>
+        </div>
         <% } %>
       </div>
     </div>
