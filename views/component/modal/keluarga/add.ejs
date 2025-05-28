@@ -17,7 +17,7 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form method="post" action="/keluarga">
+        <form method="post" action="/keluarga" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="name" class="form-label">Nama Keluarga</label>
               <input type="text" class="form-control" id="name" name="name" placeholder=" " required autocomplete="off">
@@ -35,6 +35,13 @@
                 <option value="4">Rp. 0 - Rp. 400.000</option>
                 <option value="5">TIDAK BERPENGHASILAN</option>
               </select>
+            </div>
+            <div class="mb-3">
+              <label for="file" class="form-label">Slip Gaji</label>
+              <input type="file" class="form-control" id="file" name="file">
+              <div id="fileHelp" class="form-text text-primary">
+                *mohon upload slip gaji dengan format png, jpeg, pdf jika ada
+              </div>
             </div>
             <div class="mb-3">
               <label for="criteria" class="form-label">Status Tempat Tinggal</label>

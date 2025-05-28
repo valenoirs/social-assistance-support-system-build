@@ -26,9 +26,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.router = void 0;
 const express_1 = require("express");
 const keluarga = __importStar(require("../controllers/keluarga"));
+const upload = require('../utils/fileHandler')
 exports.router = (0, express_1.Router)();
-exports.router.post('/', keluarga.add);
+exports.router.post('/', upload.single("file"), keluarga.add);
 exports.router.delete('/', keluarga.remove);
-exports.router.put('/', keluarga.update);
+exports.router.put('/', upload.single("file"), keluarga.update);
 exports.router.post('/search', keluarga.search);
 exports.router.post('/search/home', keluarga.searchHome);

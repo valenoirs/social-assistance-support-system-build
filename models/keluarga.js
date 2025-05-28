@@ -6,6 +6,7 @@ const KeluargaSchema = new mongoose_1.Schema(
   {
     name: { type: String, required: true, unique: true },
     origin: { type: String, required: false },
+    paycheck: {type: String , required: false},
     criteria: { type: [Number], default: [1, 1, 1, 1, 1, 1, 1] },
   },
   {

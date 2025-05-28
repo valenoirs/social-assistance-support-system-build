@@ -32,6 +32,7 @@
             <th scope="col" width="45">No</th>
             <th scope="col">Nama</th>
             <th scope="col">Desa</th>
+            <th scope="col">Slip Gaji</th>
             <th scope="col">Penghasilan Bulanan</th>
             <th scope="col">Status Tempat Tinggal</th>
             <th scope="col">Sumber Mata Pencarian</th>
@@ -48,6 +49,13 @@
             <th scope="row" class="text-primary"><%= index + 1 %></th>
             <td><%= keluarga.name %></td>
             <td><%= keluarga.origin %></td>
+            <td>
+              <% if (keluarga.paycheck) { %>
+                <a href="<%= keluarga.paycheck %>" target="_blank">Lihat</a>
+              <% } else { %>
+                  -
+              <% } %>
+            </td>
             <% keluarga.criteria.forEach((value, index) => { %>
             <!-- Kriteria 1 -->
             <% if (value === 1 && index === 0) { %>

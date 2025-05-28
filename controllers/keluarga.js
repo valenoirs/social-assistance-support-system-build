@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.searchHome = exports.search = exports.update = exports.remove = exports.add = void 0;
 const keluarga_1 = require("../models/keluarga");
 const saw_1 = __importDefault(require("../utils/saw"));
+const filter = require("../utils/fileFilter")
+const path = require("path")
 const add = async (req, res) => {
     try {
         const { name } = req.body;
@@ -15,6 +17,19 @@ const add = async (req, res) => {
             console.log('[SERVER]: Redundant familiy name.');
             return res.redirect('back');
         }
+
+        if (req.file) {
+            const validFile = filter(path.extname(req.file.originalname))
+
+            if (validFile) {
+                req.flash('notification', 'Format file yang di upload tidak sesuai.')
+                console.log('incorrect file format.')
+                return res.redirect('back')
+            }
+
+            req.body.paycheck = `/upload/${req.file?.filename}`
+        }
+
         await new keluarga_1.Keluarga(req.body).save();
         req.flash('notification', 'Keluarga berhasil ditambahkan.');
         console.log('[SERVER]: New Keluarga added.');
@@ -57,6 +72,15 @@ const update = async (req, res) => {
             console.log('[SERVER]: Keluarga not found.');
             return res.redirect('back');
         }
+        
+        if(keluarga.paycheck) {
+            req.body.paycheck = keluarga.paycheck;
+        }
+
+        if (req.file) {
+            req.body.paycheck = `/upload/${req.file?.filename}`;
+        }
+
         await keluarga_1.Keluarga.findByIdAndUpdate(id, { $set: req.body });
         req.flash('notification', 'Keluarga berhasil diperbarui.');
         console.log('[SERVER]: Keluarga edited.');
